@@ -1,13 +1,14 @@
 import { Application } from "express";
-import { testRouter } from "./test/router";
+import * as v1Routes from "./v1";
 
-const API_VERSION = process.env.API_VERSION;
+const API_VERSION = process.env.API_VERSION || 1;
 
 export const initiateRouter = (app: Application) => {
   const routes = [
     {
+      version: 1,
       path: "test",
-      router: testRouter,
+      router: v1Routes.testRouter,
       secure: false,
     },
   ];
@@ -17,7 +18,7 @@ export const initiateRouter = (app: Application) => {
       `/api/v${API_VERSION}/${route.path}`,
       async (req, res, next) => {
         if (route.secure) {
-          if (!req.headers.api_key)
+          if (!req.headers.authorization)
             res.json("Authentication / Authorization failed");
 
           // Check API key

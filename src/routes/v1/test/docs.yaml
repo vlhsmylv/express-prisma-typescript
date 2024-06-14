@@ -1,0 +1,16 @@
+paths:
+  /test:
+    get:
+      summary: Test endpoint
+      description: This is a test endpoint
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, world!

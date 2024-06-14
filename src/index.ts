@@ -5,8 +5,10 @@ import cors from "cors";
 config();
 
 import { initiateRouter } from "./routes";
+import swaggerDocs from "./utils/swagger";
+import rateLimiter from "./utils/rate-limiter";
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 if (!PORT) {
   process.exit(1);
@@ -14,8 +16,12 @@ if (!PORT) {
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
+app.use(cors());
+
+app.use(swaggerDocs);
+
+app.use(rateLimiter);
 
 initiateRouter(app);
 
