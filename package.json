@@ -8,8 +8,7 @@
     "dev": "nodemon src/index.ts",
     "build": "npx prisma generate && tsc",
     "vercel-build": "npx prisma generate && echo vbuild",
-    "prisma": "npx prisma generate",
-    "lint": "eslint . ***/**/*.ts"
+    "prisma": "npx prisma generate"
   },
   "keywords": [],
   "author": "",
@@ -27,7 +26,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.5.0",
     "@types/cors": "^2.8.17",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
@@ -37,11 +35,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "esbuild-register": "^3.5.0",
-    "eslint": "^9.5.0",
     "globals": "^15.4.0",
     "nodemon": "^3.1.0",
     "prisma": "^5.10.2",
-    "typescript": "^5.3.3",
-    "typescript-eslint": "^7.13.0"
+    "typescript": "^5.3.3"
   }
 }

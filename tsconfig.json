@@ -3,5 +3,5 @@
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "include": ["***/**/*.ts", ".eslintrc.json"]
+  "include": ["***/**/*.ts"]
 }
